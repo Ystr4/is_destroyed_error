@@ -4,13 +4,19 @@
 
     switch (loc.Type) {
       case 0:// html
+        // todo: example 1 (with error)
         tag = 'HtmlWrapper';
+
+        // todo: example 2 (without error)
         // tag = 'HtmlWrapper_func';
+
+        // todo: situation 3 (alternative without the extra component)
         // tag = loc.Value;
-        if (loc.Action === 'show' && loc.Extra !== null) {
-          show = state.Values[loc.Extra].Expression;
-        }
+        // if (loc.Action === 'show' && loc.Extra !== null) {
+        //   show = state.Values[loc.Extra].Expression;
+        // }
         break;
+
       case 1:// text
         tag = 'span';
         domProps = {
@@ -26,6 +32,8 @@
         loc,
         show
       },
+
+      // todo: situation 3
       // class: {'hidden': !show},
       key: `${state.Id}_${loc.L}`
     }
@@ -37,9 +45,6 @@
     render(createElement, context) {
       const element = _build(context.data.loc, context.data.screen);
       return createElement(element.tag, element);
-      // return element.show
-        // ? createElement(element.tag, element, this.$slots.default)
-        // : createElement(element.tag, element)
     }
   }
 </script>
