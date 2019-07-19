@@ -8,13 +8,14 @@
           show = state.Values[loc.Extra].Expression;
         }
 
-        // todo: example 1 (with error)
-        // tag = 'HtmlWrapper';
-
-        // todo: example 2 (without error)
+        // todo: example 1 (without error)
         tag = 'HtmlWrapper_func';
 
-        // todo: situation 3 (alternative without the extra component)
+        // todo: example 2 (with error)
+        // tag = 'HtmlWrapper';
+
+
+        // todo: situation 3 (without error, no extra component)
         // tag = loc.Value;
         break;
 

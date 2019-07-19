@@ -5,13 +5,15 @@
     methods: {
       getTestResult(name) {
         return (this.state.Values.hasOwnProperty(name))
-            ? this.state.Values[name]
-            : false;
+            ? this.state.Values[name].Expression
+            : true;
       }
     },
     computed: {
       show() {
-        return (this.loc.Action === 'show' && this.loc.Extra !== null) ? this.getTestResult(this.loc.Extra) : false;
+        return (this.loc.Action === 'show' && this.loc.Extra !== null)
+          ? this.getTestResult(this.loc.Extra)
+          : true;
       },
       classList() {
         return {
