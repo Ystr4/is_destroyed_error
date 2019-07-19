@@ -2,18 +2,10 @@
   export default {
     name: "HtmlWrapper",
     props: ['loc', 'state'],
-    methods: {
-      getTestResult(name) {
-        return (this.state.Values.hasOwnProperty(name))
-            ? this.state.Values[name].Expression
-            : true;
-      }
-    },
     computed: {
       show() {
-        return (this.loc.Action === 'show' && this.loc.Extra !== null)
-          ? this.getTestResult(this.loc.Extra)
-          : true;
+        // simplified
+        return this.state.Values[name].Expression;
       },
       classList() {
         return {
