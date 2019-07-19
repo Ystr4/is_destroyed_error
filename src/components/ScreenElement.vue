@@ -4,17 +4,18 @@
 
     switch (loc.Type) {
       case 0:// html
+        if (loc.Action === 'show' && loc.Extra !== null) {
+          show = state.Values[loc.Extra].Expression;
+        }
+
         // todo: example 1 (with error)
-        tag = 'HtmlWrapper';
+        // tag = 'HtmlWrapper';
 
         // todo: example 2 (without error)
-        // tag = 'HtmlWrapper_func';
+        tag = 'HtmlWrapper_func';
 
         // todo: situation 3 (alternative without the extra component)
         // tag = loc.Value;
-        // if (loc.Action === 'show' && loc.Extra !== null) {
-        //   show = state.Values[loc.Extra].Expression;
-        // }
         break;
 
       case 1:// text
