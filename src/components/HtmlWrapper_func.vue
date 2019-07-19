@@ -3,16 +3,11 @@
     name: "HtmlWrapper_func",
     functional: true,
     render(createElement, context) {
-      const data = {
-        class: {'hidden': !context.props.show}
-      };
-      return createElement(context.props.loc.Value, data);
+      const data = (context.props.tag === 'h1')
+        ? {domProps: {innerHTML: context.props.text}, key: context.props.createdAt}
+        : {};
+
+      return createElement(context.props.tag, data);
     }
   }
 </script>
-
-<style scoped>
-    .hidden {
-        display: none;
-    }
-</style>

@@ -1,29 +1,13 @@
 <script>
   export default {
     name: "HtmlWrapper",
-    props: ['loc', 'state'],
-    computed: {
-      show() {
-        // simplified
-        return this.state.Values[name].Expression;
-      },
-      classList() {
-        return {
-          'hidden': !this.show
-        }
-      }
-    },
+    props: ['text', 'tag', 'createdAt'],
     render(createElement) {
-      const data = {
-        class: this.classList
-      };
-      return createElement(this.loc.Value, data);
+      const data = (this.tag === 'h1')
+        ? {domProps: {innerHTML: this.text}, key: this.createdAt}
+        : {};
+
+      return createElement(this.tag, data)
     }
   }
 </script>
-
-<style scoped>
-    .hidden {
-        display: none;
-    }
-</style>
