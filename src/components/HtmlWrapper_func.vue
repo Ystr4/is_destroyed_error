@@ -4,7 +4,7 @@
     functional: true,
     render(createElement, context) {
       const data = (context.props.tag === 'h1')
-        ? {domProps: {innerHTML: context.props.text}, key: context.props.createdAt}
+        ? {domProps: {innerHTML: context.props.text}}
         : {};
 
       return createElement(context.props.tag, data);
